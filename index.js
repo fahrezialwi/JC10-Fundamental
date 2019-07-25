@@ -632,15 +632,157 @@ line
 
 // CONCATENATION (GABUNGKAN ARRAY)
 
-let nama = ['Reyhan', 'Haniful', 'Donny']
-let nama2 = ['Ifan', 'Lukito', 'Syaiful']
-let nama3 = ['Ilham', 'Aisyah','Ayu']
+// let nama = ['Reyhan', 'Haniful', 'Donny']
+// let nama2 = ['Ifan', 'Lukito', 'Syaiful']
+// let nama3 = ['Ilham', 'Aisyah','Ayu']
 
-let gabung1 = nama.concat(nama2)
-let gabung2 = nama3.concat(nama2, nama)
+// let gabung1 = nama.concat(nama2)
+// let gabung2 = nama3.concat(nama2, nama)
 
-console.log(gabung1)
-console.log(gabung2)
+// console.log(gabung1)
+// console.log(gabung2)
+
+// OBJECT
+// variabel di dalam object disebut property
+// function di dalam objek dinamakan method
+// this akan menunjuk objek di mana  this itu dipanggil
+
+
+// var manusia = { 
+//     firstName : 'Agung', 
+//     lastName : 'Boby'
+// }
+
+// var orang = { 
+//     firstName : 'Angga', 
+//     lastName : 'Candra',
+//     age : 32,
+//     job: 'Artist',
+//     sayHello: function(nama) {
+//         console.log('Hello ' + nama)
+//     } ,
+//     fullName: function() {
+//         return this.firstName + " " + this.lastName
+//     }           
+// }
+
+// console.log(orang)
+// console.log(orang.firstName)
+// console.log(orang.lastName)
+
+// orang.sayHello('Kevin')
+
+// var namaLengkap = orang.fullName() // angga, candra
+// console.log(namaLengkap)
+
+// // membuat Object Literal
+
+// var orang = {firstName: 'Janice', lastName: 'Manuella'}
+// console.log(orang)
+
+// orang.job = "Lawyer"
+// orang.makan = function(){
+//     console.log("Sedang makan")
+// }
+
+// console.log(orang)
+// delete orang.firstName
+
+// console.log(orang)
+// orang.makan()
+
+// // membuat object dengan keyword new
+
+// var person = new Object()
+
+// console.log(person);
+
+// person.name = 'Riau'
+// person.age = 31
+
+// console.log(person)
+
+// // membuat objek dengan Object Constructor
+
+// var manusia = function(nama, umur, job){
+//     this.firstNama = nama,
+//     this.age = umur,
+//     this.job = job
+// }
+
+// var baron = new manusia('Baron', 21, 'Lead Academic')
+// var brian = new manusia('Brian', 27, 'Lead Tech')
+// console.log(baron)
+// console.log(brian)
+
+// var objOne = {
+//     propOne: 'String biasa',
+//     propTwo: {
+//         subPropOne: 23,
+//         subPropTwo: function(x){
+//             console.log("Sub property " + x)
+//         }
+//     },
+//     propThree : ["Red", "Green", "Blue"],
+//     propFour : [
+//         12,
+//         {insideOne: 44, insideTwo: 45}
+//     ]
+// }
+
+// console.log(objOne.propFour[0])
+
+// objOne.propTwo.subPropTwo(45) //mengakses method
+
+// var hari = {
+//     pertama: "Senin",
+//     kedua: "Selasa",
+//     ketiga: "Rabu",
+//     keempat: "Kamis",
+//     kelima: "Jumat",
+//     keenam: "Sabtu",
+//     ketujuh: "Minggu"
+// }
+
+// looping for in, looping sebanyak property di dalam object
+// namaProp akan berisi property yg ada di dalam object hari
+// for (var namaProp in hari){
+//     console.log(namaProp + ' : ' + hari[namaProp]);
+// }
+
+// console.log(hari.pertama)
+// console.log(hari['pertama']) // syntax lain
+
+// Class = adalah template untuk membuat objek, pembaharu dari Object Constructor
+
+class MakhlukHidup {
+    constructor(place, hidup){
+        //sedang bikin properties
+        this.tempatTinggal = place,
+        this.bernyawa = hidup
+    }
+
+    // methods
+    makan(sesuatu) {
+        console.log('Sedang Makan ' + sesuatu)
+    }
+
+    bernafas() {
+        console.log('Sedang bernafas')
+    }
+}
+
+var simba = new MakhlukHidup ('Bumi', true)
+simba.makan('cereal')
+console.log(simba)
+
+var today = new Date('1995-12-17T03:24:00')
+console.log(today)
+
+
+
+
+
 
 
 
