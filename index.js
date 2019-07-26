@@ -755,29 +755,207 @@ line
 
 // Class = adalah template untuk membuat objek, pembaharu dari Object Constructor
 
-class MakhlukHidup {
-    constructor(place, hidup){
-        //sedang bikin properties
-        this.tempatTinggal = place,
-        this.bernyawa = hidup
-    }
+// class MakhlukHidup {
+//     constructor(place, hidup){
+//         //sedang bikin properties
+//         this.tempatTinggal = place,
+//         this.bernyawa = hidup
+//     }
 
-    // methods
-    makan(sesuatu) {
-        console.log('Sedang Makan ' + sesuatu)
-    }
+//     // methods
+//     makan(sesuatu) {
+//         console.log('Sedang Makan ' + sesuatu)
+//     }
 
-    bernafas() {
-        console.log('Sedang bernafas')
-    }
+//     bernafas() {
+//         console.log('Sedang bernafas')
+//     }
+// }
+
+// var simba = new MakhlukHidup('Bumi', true)
+
+// var sambi = new MakhlukHidup('Mars', false)
+// simba.makan('cereal')
+// console.log(simba)
+// console.log(sambi)
+
+// var today = new Date('1995-12-17T03:24:00')
+// console.log(today)
+
+// INHERITANCE
+
+// Makhluk Hidup
+//     - nama
+//     - tempat tinggal
+//     - bernyawa
+//     - makan
+//     - bernafas
+
+// Manusia
+//     - Tempat tinggal
+//     - Bernyawa
+//     - Akal
+//     - Berkarya
+//     - Bernafas
+//     - Bergerak
+//     - CariUang
+    
+// Hewan
+//     - Tempat Tinggal
+//     - Bernyawa
+//     - Bersayap
+//     - Bernafas
+//     - Bergerak
+//     - Berburu
+
+// Tumbuhan
+//     - Tempat Tinggal
+//     - Bernyawa
+//     - Fotosintesis
+//     - Bernafas
+
+// class MakhlukHidup {
+//     constructor(nama, place, hidup){
+//         //sedang bikin properties
+//         this.name = nama,
+//         this.tempatTinggal = place,
+//         this.bernyawa = hidup
+//     }
+
+//     // methods
+//     makan(sesuatu) {
+//         console.log('Sedang Makan ' + sesuatu)
+//     }
+
+//     bernafas() {
+//         console.log('Sedang bernafas')
+//     }
+// }
+
+// class Manusia extends MakhlukHidup {
+
+//     constructor(nama, place, hidup, akal, karya){
+//         super(nama, place, hidup)
+//         this.berakal = akal,
+//         this.berkarya = karya
+//     }
+
+//     // methods
+//     bergerak(arah) {
+//         console.log('Sedang bergerak ke ' + arah)
+//     }
+
+//     cariuang() {
+//         console.log(this.name + 'sedang mencari uang ') // this.name bukan untuk membuat properties, tapi untuk memanggil yg udah dideklarasikan di constructor
+//     }
+// }
+
+// // var brew = new Manusia('Brew Master', 'Bumi', true, true, 'Lukisan')
+// // console.log(brew)
+
+// class Hewan extends MakhlukHidup {
+
+//     constructor(nama, place, hidup, sayap){
+//         super(nama, place, hidup)
+//         this.bersayap = sayap
+//     }
+
+//     bergerak(arah) {
+//         console.log('Sedang bergerak ke ' + arah)
+//     }
+
+//     berburu(buruan) {
+//         console.log(this.name + ' sedang berburu ' + buruan) 
+//     }
+// }
+
+// var macan = new Hewan('Macan Cisewu', 'Bumi', true, false)
+// console.log(macan)
+
+// macan.berburu("tikus")
+
+
+// class Tumbuhan extends MakhlukHidup {
+//     constructor(nama, place, hidup){
+//         super(nama, place, hidup)
+//     }
+
+// var jambu = new Tumbuhan('Jambu Air', 'Bumi', true, true)
+// console.log(jambu)
+
+// bisa juga extend antar anak kelas kayak class Tumbuhan extends Hewan
+
+// ARRAY SORT
+
+// var buah = ['Belimbing', 'Semangka', 'Apel', 'Salak']
+// buah.sort()
+// console.log(buah)
+
+// var angka = [2,1,20,3,27]
+// angka.sort() // jika pakai sort() pada angka, akan error karena angka dianggap string. Bisa dimasukin function ke parameter untuk benerin. Function yg masuk harus mereturn angka<0 atau angka>0
+// console.log(angka)
+
+// numeric sort fixed
+// function ascending(a,b) {
+//     return a-b
+// }
+
+// function descending(a,b) {
+//     return b-a
+// }
+
+// var angka = [2,1,20,3,27]
+// angka.sort(ascending) // sort termasuk callback function
+// console.log(angka)
+
+// var angka2 = [2,1,20,3,27]
+// angka2.sort(function(a,b) {return b-a}) // bisa langsung dimasukin
+// console.log(angka2)
+
+// campuran
+
+// var campuran = [2,1,"Apel",7,3,"Belimbing",10]
+// campuran.sort()
+// console.log(campuran)
+
+// SORTING AN ARRAY OF OBJECTS
+
+var list = [
+    {name: 'Elisa', age: 32},
+    {name: 'Sunhe', age: 27},
+    {name: 'ansel', age: 24},
+    {name: 'audi', age: 19},
+    {name: 'Alex', age: 45}
+]
+
+// SORTING AGE ASCENDING
+// function umur() {
+//     return a.age-b.age // a = {name: 'Elisa', age: 32}  b = {name: 'Sunhe', age: 27}
+// }
+
+// list.sort(umur)
+// console.log(list)
+
+// console.log(list)
+
+// SORTING NAME ASCENDING
+
+function name(a, b){
+    var nameA=a.name.toLowerCase() // harus ada toLowerCase nya
+    var nameB=b.name.toLowerCase()
+    if (nameA < nameB) //sort string ascending
+        return -1 
+    else if (nameA > nameB)
+        return 1
+    return 0 //default return value (no sorting)
 }
 
-var simba = new MakhlukHidup ('Bumi', true)
-simba.makan('cereal')
-console.log(simba)
+list.sort(name)
+console.log(list)
 
-var today = new Date('1995-12-17T03:24:00')
-console.log(today)
+
+
+
 
 
 
