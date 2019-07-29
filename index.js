@@ -920,13 +920,13 @@ line
 
 // SORTING AN ARRAY OF OBJECTS
 
-var list = [
-    {name: 'Elisa', age: 32},
-    {name: 'Sunhe', age: 27},
-    {name: 'ansel', age: 24},
-    {name: 'audi', age: 19},
-    {name: 'Alex', age: 45}
-]
+// var list = [
+//     {name: 'Elisa', age: 32},
+//     {name: 'Sunhe', age: 27},
+//     {name: 'ansel', age: 24},
+//     {name: 'audi', age: 19},
+//     {name: 'Alex', age: 45}
+// ]
 
 // SORTING AGE ASCENDING
 // function umur() {
@@ -940,18 +940,220 @@ var list = [
 
 // SORTING NAME ASCENDING
 
-function name(a, b){
-    var nameA=a.name.toLowerCase() // harus ada toLowerCase nya
-    var nameB=b.name.toLowerCase()
-    if (nameA < nameB) //sort string ascending
-        return -1 
-    else if (nameA > nameB)
-        return 1
-    return 0 //default return value (no sorting)
+// function name(a, b){
+//     var nameA=a.name.toLowerCase() // harus ada toLowerCase nya
+//     var nameB=b.name.toLowerCase()
+//     if (nameA < nameB) //sort string ascending
+//         return -1 
+//     else if (nameA > nameB)
+//         return 1
+//     return 0 //default return value (no sorting)
+// }
+
+// list.sort(name)
+// console.log(list)
+
+// ES6
+
+// CONSTANT
+// variabel yg nilainya tidak bisa diubah
+
+// const bunga = 'mawar'
+// bunga = 'melati'
+// console.log(bunga) // error
+
+// variable scope
+// darimana suatu variable dapat di akses
+
+// var hanya dapat dibatasi oleh function
+
+// let & const
+// dibatasi oleh function dan kurung kurawal
+
+// function scope (){
+//     var didalam = 14
+//     let doom = 2012
+// }
+// console.log(didalam) // error
+
+// if (true){
+//     var diluar = 35
+//     let doomed = 2013 // error karena let dibatasi kurung kurawal
+//     const pi = 3.14 // error karena const dibatasi kurung kurawal
+// }
+
+// console.log(diluar) // 35 bisa dipanggil, 2013 dan 3.14 error
+
+// TEMPLATE STRING
+
+// let teks = `Halo
+// Dunia`
+
+// let text = 'Halo\nDunia'
+
+// console.log(teks)
+// console.log(text)
+
+// function something (name, number) {
+//     console.log(
+//         `Hai ${name} ${number}, Selamat Datang`
+//     )
+
+//     console.log(
+//         `${number} dikali ${number*2} = ${number*number*3}`
+//     )
+// }
+
+// something ('Agung', '32')
+
+// INCLUDES
+// memeriksa apakah sebuah karakter ada di dalam teks tertentu
+
+// let kalimat = 'Lorem ipsum'
+
+// let hasil = kalimat.includes('Lor') // case sensitive
+// let hasildua = kalimat.includes('lor') // case sensitive
+// console.log (hasil, hasildua)
+
+// DEFAULT PARAMETER
+// var kuadrat = function (angka = 3){ // default angka = 3
+//     console.log(angka * angka)
+// }
+
+// kuadrat()
+
+// ARROW FUNCTION
+
+// var sayHello = (name) => {
+//     console.log(`Hello ${name}`)
+// }
+
+// sayHello('Maverick')
+
+// lebih singkat
+
+// var sayHai = (name) => console.log(name)
+
+// var arrow = (angka, number) => {
+//     return angka * number
+// }  // jika ada return harus dalam kurung kurawal
+
+// console.log(renumb(3,2))
+
+// var arrowtwo = (angka, number) => angka * number
+// // jika tidak ada return, kurung kurawal tidak usah
+
+// console.log(renumb(3,2))
+
+// ARRAY FILTERING
+// - filter() menerima satu input berupa function (callback)
+// - callback function menerima satu input berupa data dari array
+// - callback function harus return trur atau false
+// - jika return true, data akan tetap ada, jika false akan mengihlang
+// - filter() menghasilkan/mereturn array baru
+
+
+// let angka = [0,1,2,3,4,5]
+
+// let hasil = angka.filter(
+//     (element) => {
+//         return element < 3
+//     }
+// )
+
+// let ganjil = angka.filter(
+//     (element) => {
+//         return element % 2 == 1
+//     }
+// )
+
+// let genap = angka.filter(
+//     (element) => {
+//         return element % 2 == 0
+//     }
+// )
+
+// console.log(angka)
+// console.log(hasil)
+// console.log(ganjil)
+// console.log(genap)
+
+
+// BIKIN TIRUAN FUNCTION FILTER
+
+// cara bagus
+
+// let angka = [0,1,2,3,4,5]
+
+// Array.prototype.funfilter = function(fun) {
+//     var filtered = []
+//     for(let i = 0; i < this.length; i++) {
+//       if (fun(this[i], i, this)) {
+//           filtered.push(this[i])
+//       }
+//     }
+//     return filtered
+// }
+
+// let hasil = angka.funfilter(function(element){
+//     return element < 3
+// })
+// console.log(hasil)
+
+
+// cara mudah
+
+// let angka = [0,1,2,3,4,5]
+
+// let funfilter = (array, fun) => {
+//     var arrayBaru = []
+
+//     // array = [0,1,2,3,4,5]
+//     // fun = (element) => {return element <3}
+//     // i = 0; array.length = 6 ; element = array[i]
+
+//     for(var i = 0; i < array.length; i++){
+//         var res = fun(array[i])
+//         if (res){
+//             arrayBaru.push(array[i])
+//         }
+//     }
+//     return arrayBaru
+// }
+
+// let kurangDari = (element) => {return element < 3}
+// let hasil = funfilter(angka,kurangDari)
+
+// console.log(hasil)
+
+// cara gabungan
+
+let angka = [0, 1, 2, 3, 4, 5]
+
+Array.prototype.funfilter = function (fun) {
+    var arrayBaru = []
+
+    // array = [0,1,2,3,4,5]
+    // fun = function(element) {return element <3}
+    // i = 0; array.length = 6 ; element = array[i]
+
+    for (var i = 0; i < this.length; i++) {
+        var res = fun(this[i])
+        if (res) {
+            arrayBaru.push(this[i])
+        }
+    }
+    return arrayBaru
 }
 
-list.sort(name)
-console.log(list)
+let kurangDari = (element) => {return element < 3}
+let hasil = angka.funfilter(kurangDari)
+
+console.log(hasil)
+
+
+  
+
 
 
 
