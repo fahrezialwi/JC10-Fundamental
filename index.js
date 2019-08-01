@@ -1128,32 +1128,58 @@ line
 
 // cara gabungan
 
-let angka = [0, 1, 2, 3, 4, 5]
+// let angka = [0, 1, 2, 3, 4, 5]
 
-Array.prototype.funfilter = function (fun) {
-    var arrayBaru = []
+// Array.prototype.funfilter = function (fun) {
+//     var arrayBaru = []
 
-    // array = [0,1,2,3,4,5]
-    // fun = function(element) {return element <3}
-    // i = 0; array.length = 6 ; element = array[i]
+//     // array = [0,1,2,3,4,5]
+//     // fun = function(element) {return element <3}
+//     // i = 0; array.length = 6 ; element = array[i]
 
-    for (var i = 0; i < this.length; i++) {
-        var res = fun(this[i])
-        if (res) {
-            arrayBaru.push(this[i])
-        }
-    }
-    return arrayBaru
-}
+//     for (var i = 0; i < this.length; i++) {
+//         var res = fun(this[i])
+//         if (res) {
+//             arrayBaru.push(this[i])
+//         }
+//     }
+//     return arrayBaru
+// }
 
-let kurangDari = (element) => {return element < 3}
-let hasil = angka.funfilter(kurangDari)
+// let kurangDari = (element) => {return element < 3}
+// let hasil = angka.funfilter(kurangDari)
 
-console.log(hasil)
+// console.log(hasil)
 
+// MAP ARRAY
 
+// - map() function yg menerima inout berupa callback function
+// - callback function menerima input berupa element pada array
+// - map() akan mereturn array baru
+// - map() akan mengubah bentuk suatu data ke bentuk lainnya
   
+// let angka = [2,7,3,9,12]
+// let hasilPerkalian = angka.map((element) => {
+//     return element*2
+// })
 
+// let hasilBoolean = angka.map((number) => {
+//     return number<8
+// })
+
+// // mereturn array of object
+// let hasilObj = angka.map((item) => {
+//     return {hari: 'Selasa', angka: item}
+// })
+
+// let hasilStr = hasilObj.map((obj) => {
+//     return obj.hari + ' ' + obj.angka
+// })
+
+// console.log(hasilPerkalian)
+// console.log(hasilBoolean)
+// console.log(hasilObj)
+// console.log(hasilStr)
 
 
 
