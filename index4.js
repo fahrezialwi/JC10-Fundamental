@@ -58,10 +58,41 @@ let funFilterName = () => {
     let hasilFilter = arrManusia.filter((val) => {
         return val.nama.toLowerCase().includes(filter.toLowerCase())
     })
-
-    console.log(hasilFilter)
     // renderlist
-    
+    let list = hasilFilter.map((val) => {
+        return `<tr>
+                <td>${val.nama}</td>
+                <td>${val.umur}</td>
+                <td>${val.job}</td>
+            </tr>`
+    })
+
+    // munculkan hasil render
+    document.getElementById('here').innerHTML = list.join('')
+}
+
+let funFilterUmur = () => {
+    let num1 = document.getElementById('num1').value
+    let num2 = document.getElementById('num2').value
+
+
+    let list
+
+    if(!(num1 == '' || num2 == '')){
+        list = arrManusia.filter((val) => {
+            return (val.umur >= num1 && val.umur <= num2)
+        })
+    }
+
+    list = list.map(val => {
+        return `<tr>
+        <td>${val.nama}</td>
+        <td>${val.umur}</td>
+        <td>${val.job}</td>
+        </tr>`
+    })
+
+    document.getElementById('here').innerHTML = list.join('')
 
 }
 
