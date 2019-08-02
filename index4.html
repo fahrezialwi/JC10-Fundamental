@@ -24,24 +24,21 @@
 </head>
 
 <body>
-    <form >
+    <form>
         <fieldset>
             <legend>Filter</legend>
             <p>Nama: <input type="text" id="search" oninput="funFilterName()"></p>
-            <p>Umur: <input type="number" name="num1" id="num1" onkeyup="funFilterUmur()"> - <input type="number" name="num2" id="num2"
-                    onkeyup="funFilterUmur()"></p>
-            <p>Pekerjaan: <select name="job" id="job">
-                </select>
-            </p>
+            <p>Umur: <input type="number" name="num1" id="num1" onkeyup="funFilterUmur()"> - <input type="number" name="num2" id="num2" onkeyup="funFilterUmur()"></p>
+            <p>Pekerjaan: <select name="job" id="job"></select></p>
             <p><input type="button" value="Search Job" onclick="funFilterJob()"></p>
         </fieldset>
-        
+
         <fieldset>
             <legend>Input Data</legend>
             <table>
-                <td><input type="text" name="nama" id="nama"></td>
-                <td><input type="number" name="nama" id="umur"></td>
-                <td><input type="text" name="nama" id="jobInput"></td>
+                <td>Nama<br><input type="text" name="nama" id="nama"></td>
+                <td>Umur<br><input type="number" name="nama" id="umur"></td>
+                <td>Pekerjaan<br><input type="text" name="nama" id="jobInput"></td>
             </table>
             <p><input type="button" value="Submit" onclick="funInputData()"></p>
         </fieldset>
@@ -52,10 +49,10 @@
                     <th>Nama</th>
                     <th>Umur</th>
                     <th>Pekerjaan</th>
-                    <th colspan="2">Action</th>
+                    <th>Action</th>
                 </thead>
                 <tbody id="here">
-                    
+
                 </tbody>
             </table>
         </fieldset>

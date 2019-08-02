@@ -11,6 +11,39 @@ let arrJob = [
     'All' ,'Dev', 'CEO', 'PM', 'CTO'
 ];
 
+let remove = (element) => {
+    arrManusia.splice(element,1)
+    funShow(arrManusia)
+}
+
+// // function remove cara lain
+// let remove = (removeIndex) => {
+//     let arrayDelete = arrManusia.filter((val, index) => {
+//         return index != removeIndex
+//     })
+//     arrManusia = arrayDelete
+//     funShow(arrManusia)
+// }
+
+let funShow = (array) => {
+    let listManusia = array.map((val, index) => {
+        return `<tr>
+                <td>${val.nama}</td>
+                <td>${val.umur}</td>
+                <td>${val.job}</td>
+                <td><input type="button" value="Delete" onclick="remove(${index})"</td>
+            </tr>`
+    })
+
+    let listJob = arrJob.map((val) => {
+        return `<option value="${val}">${val}</option>`
+       
+    })
+
+    document.getElementById('here').innerHTML = listManusia.join('');
+    document.getElementById('job').innerHTML = listJob.join('');
+}
+
 let funInputData = () => {
     // get data
     let nama = document.getElementById("nama").value
@@ -28,72 +61,57 @@ let funInputData = () => {
         arrJob.push(job)
     }
 
-    funShow()
+    funShow(arrManusia)
 }
 
-// render list
-
-let funShow = () => {
-    let listManusia = arrManusia.map((val) => {
-        return `<tr>
-                <td>${val.nama}</td>
-                <td>${val.umur}</td>
-                <td>${val.job}</td>
-            </tr>`
-    })
-
-    let listJob = arrJob.map((val) => {
-        return `<option value="${val}">${val}</option>`
-       
-    })
-
-    document.getElementById('here').innerHTML = listManusia.join('');
-    document.getElementById('job').innerHTML = listJob.join('');
-}
+// FILTER NAMA
 
 let funFilterName = () => {
     // get data from user
     let filter = document.getElementById("search").value
     // filtering
-    let hasilFilter = arrManusia.filter((val) => {
+    let hasilFilterName = arrManusia.filter((val) => {
         return val.nama.toLowerCase().includes(filter.toLowerCase())
     })
     // renderlist
-    let list = hasilFilter.map((val) => {
-        return `<tr>
-                <td>${val.nama}</td>
-                <td>${val.umur}</td>
-                <td>${val.job}</td>
-            </tr>`
-    })
-
-    // munculkan hasil render
-    document.getElementById('here').innerHTML = list.join('')
+    funShow(hasilFilterName)
+  
 }
+
+// FILTER UMUR
 
 let funFilterUmur = () => {
     let num1 = document.getElementById('num1').value
     let num2 = document.getElementById('num2').value
 
-
-    let list
+    let hasilFilterUmur = arrManusia
 
     if(!(num1 == '' || num2 == '')){
-        list = arrManusia.filter((val) => {
+        hasilFilterUmur = arrManusia.filter((val) => {
             return (val.umur >= num1 && val.umur <= num2)
         })
     }
 
-    list = list.map(val => {
-        return `<tr>
-        <td>${val.nama}</td>
-        <td>${val.umur}</td>
-        <td>${val.job}</td>
-        </tr>`
-    })
-
-    document.getElementById('here').innerHTML = list.join('')
+    funShow(hasilFilterUmur)
 
 }
 
-funShow()
+// FILTER JOB
+
+let funFilterJob = () => {
+    let selectedJob = document.getElementById('job').value
+    let hasilFilterJob = []
+    
+    if (selectedJob == 'All'){
+        hasilFilterJob = arrManusia
+    }
+    else {
+        hasilFilterJob = arrManusia.filter((val) => {
+            return val.job == selectedJob
+        })
+    }
+
+    funShow(hasilFilterJob)
+}
+
+funShow(arrManusia)
