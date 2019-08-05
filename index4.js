@@ -25,13 +25,74 @@ let remove = (element) => {
 //     funShow(arrManusia)
 // }
 
+let funEditData = (element) => {
+    // get data
+    let nama = document.getElementById("namaEdit").value
+    let umur = document.getElementById("umurEdit").value
+    let job = document.getElementById("jobEdit").value
+
+    arrManusia[element] = {
+        nama: nama,
+        umur: umur, 
+        job: job
+    }
+             
+    // check job
+    let ada = arrJob.includes(job)
+    if (!ada){
+        arrJob.push(job)
+    }
+
+    funShow(arrManusia)
+}
+
+let edit = (selection) => {
+    let listManusia = arrManusia.map((val, index) => {
+        if (index == selection) {
+        var rowTable =
+            `<tr>
+            <td><input type="text" id="namaEdit" value="${val.nama}"></td>
+            <td><input type="text" id="umurEdit" value="${val.umur}"></td>
+            <td><input type="text" id="jobEdit" value="${val.job}"></td>
+            <td><input type="button" value="OK" onclick="funEditData(${index})"</td>
+            <td><input type="button" value="Cancel" onclick="funShow(arrManusia)"</td>
+            </tr>`
+        }
+
+        else {
+        rowTable = 
+            `<tr>
+            <td>${val.nama}</td>
+            <td>${val.umur}</td>
+            <td>${val.job}</td>
+            <td><input type="button" value="Delete" onclick="remove(${index})"</td>
+            <td><input type="button" value="Edit" disabled onclick="funShow(arrManusia)"</td>
+            </tr>`
+        }
+        return rowTable    
+    })
+
+    let listJob = arrJob.map((val) => {
+        return `<option value="${val}">${val}</option>`
+       
+    })
+
+    document.getElementById('here').innerHTML = listManusia.join('');
+    document.getElementById('job').innerHTML = listJob.join('');
+    
+}
+
+
 let funShow = (array) => {
     let listManusia = array.map((val, index) => {
+
+        
         return `<tr>
                 <td>${val.nama}</td>
                 <td>${val.umur}</td>
                 <td>${val.job}</td>
                 <td><input type="button" value="Delete" onclick="remove(${index})"</td>
+                <td><input type="button" value="Edit" onclick="edit(${index})"</td>
             </tr>`
     })
 
@@ -63,6 +124,7 @@ let funInputData = () => {
 
     funShow(arrManusia)
 }
+
 
 // FILTER NAMA
 
