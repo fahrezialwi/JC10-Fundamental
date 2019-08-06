@@ -16,7 +16,7 @@ let remove = (element) => {
     funShow(arrManusia)
 }
 
-// // function remove cara lain
+// // function remove cara lain untuk mencegah unique index hilang
 // let remove = (removeIndex) => {
 //     let arrayDelete = arrManusia.filter((val, index) => {
 //         return index != removeIndex
