@@ -1079,7 +1079,7 @@ line
 // console.log(genap)
 
 
-// BIKIN TIRUAN FUNCTION FILTER
+// BIKIN TIRUAN/COPY FUNCTION FILTER SENDIRI
 
 // cara bagus
 
