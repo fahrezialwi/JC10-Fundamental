@@ -29,12 +29,12 @@ line
 // var x = 22
 // var x = 23
 
-//console.log (x) //ngerti
+//console.log (x) // ngerti
 
 // let y = 22
 //let y = 23
 
-//console.log (y) //error
+//console.log (y) // error
 
 
 // var nama = 'Zondo'
@@ -49,11 +49,11 @@ line
 //github.com/rochafialvin
 
 // var teks = 'Halo Dunia'
-// console.log(teks.length) //menghitung panjang karakter
-// console.log(teks.indexOf('Dunia'))  //menemukan posisi suatu karakter, index dimulai dari 0
+// console.log(teks.length) // menghitung panjang karakter
+// console.log(teks.indexOf('Dunia'))  // menemukan posisi suatu karakter, index dimulai dari 0
 
-// console.log(teks.substr(5,4))  //mengambil dari index 5 sebanyak 4 karakter
-// console.log(teks.slice(5,9))  // mengambil dari index 5 sampai index ke 8
+// console.log(teks.substr(5,4)) // mengambil dari index 5 sebanyak 4 karakter
+// console.log(teks.slice(5,9)) // mengambil dari index 5 sampai index ke 8
 
 // console.log(teks.split(' ')) // memecah karakter menjadi array dengan sesuatu karakter yg diinputkan
 
@@ -61,22 +61,22 @@ line
 // var y = 'DUNIA'
 // var z = 'hai, sudah dipantai nih'
 
-// console.log (z.replace('ai','ia')) //ganti karakter sekali saja
-// console.log (z.replace(/ai/g, 'ia')) //ganti semua karakter yang ada
-// console.log (x.toUpperCase()) //ganti semua karakter ke huruf kapital
-// console.log (y.toLowerCase()) //ganti semua karakter ke huruf kapital
+// console.log (z.replace('ai','ia')) // ganti karakter sekali saja
+// console.log (z.replace(/ai/g, 'ia')) // ganti semua karakter yang ada
+// console.log (x.toUpperCase()) // ganti semua karakter ke huruf kapital
+// console.log (y.toLowerCase()) // ganti semua karakter ke huruf kapital
 
 
 // var angka = '2019'
 // var teks = 'mobil'
-// var hasil = parseInt(angka) //ubah string jadi angka
+// var hasil = parseInt(angka) // ubah string jadi angka
 // var hasilTeks = parseInt(teks)
 
 // console.log(hasil)
 // console.log(angka)
 
-// console.log (hasilTeks)  // NaN
-// console.log (typeof(hasilTeks))  // tipe data tetap angka
+// console.log (hasilTeks) // NaN
+// console.log (typeof(hasilTeks)) // tipe data tetap angka
 
 // var usia = 29
 // var usiaString = '28'
@@ -111,7 +111,7 @@ line
 
 // usiaAndi + 1 // ga nambah di console, ga dimasukin ke variabel
 // usiaAndi = usiaAndi + 1 // nambah
-// console.log(usiaAndi+1) //nambah
+// console.log(usiaAndi+1) // nambah
 
 // usiaAndi-- // kurang dengan 1
 
@@ -123,9 +123,9 @@ line
 // console.log(Math.sqrt(64)) // akar 64
 // console.log(Math.cbrt(8)) // akar pangkat 3 dari 8
 
-// var a = Math.round(4.7) //pembulatan matematika
-// var b = Math.ceil(4.7)  //pembulatan ke atas
-// var c = Math.floor(4.7) //pembualatan ke bawah
+// var a = Math.round(4.7) // pembulatan matematika
+// var b = Math.ceil(4.7)  // pembulatan ke atas
+// var c = Math.floor(4.7) // pembualatan ke bawah
 
 // console.log(a, b, c)
 
@@ -135,15 +135,15 @@ line
 
 // random dadu 1-6
 // var hasil = Math.random() * 6 // 0-5.999
-// console.log(Math.floor(hasil+1)) //1-6.999
-// console.log(Math.ceil(hasil)) //cara lain
+// console.log(Math.floor(hasil+1)) // 1-6.999
+// console.log(Math.ceil(hasil)) // cara lain
 
 // var waktu = new Date()
 
 // console.log(waktu.getFullYear())
-// console.log(waktu.getMonth()) //0-11
-// console.log(waktu.getDate())  //1-30
-// console.log(waktu.getDay())  //0-6, bukan 7
+// console.log(waktu.getMonth()) // 0-11
+// console.log(waktu.getDate())  // 1-30
+// console.log(waktu.getDay())  // 0-6, bukan 7
 
 
 // comparison operator
@@ -227,7 +227,7 @@ line
 
 // var job = 'guru'
  
-// switch (job.toLowerCase()) { //biar case insensitive
+// switch (job.toLowerCase()) { // biar case insensitive
 //     case 'guru':
 //         console.log('Kerjaannya ngajar')
 //         break; // harus dibreak biar case bawahnya ga keprint lagi
@@ -387,7 +387,7 @@ line
 //     console.log(boolean);
 // }
 
-// anytype('string', 26, true) //sebenarnya direturn undefined, tapi ga di console.log
+// anytype('string', 26, true) // sebenarnya direturn undefined, tapi ga di console.log
 
 // function selalu mereturn sesuatu, kalau ga dideklarasikan apa yang harus direturn, maka function akan mereturn undefined
 
@@ -403,7 +403,7 @@ line
 //     console.log('Ini dari function dua')
 // }
 
-// satu(43,dua) //ga dipake buka tutup kurung langsung run isi function dua
+// satu(43,dua) // ga dipake buka tutup kurung langsung run isi function dua
 
 // function satu(x,fn){
 //     console.log('Nilai x: ' + x)
@@ -415,11 +415,11 @@ line
 // function dua(){
 //     console.log('Ini dari function dua')
 // }
-// satu(43,dua()) //akan mereturn undefined dari function dua()
+// satu(43,dua()) // akan mereturn undefined dari function dua()
 
 // FUNCTION HOISTING
 
-// satu(43,dua) //panggil di atas sebelum function dideklarasi
+// satu(43,dua) // panggil di atas sebelum function dideklarasi
 
 // function satu(x,fn){
 //     console.log('Nilai x: ' + x)
@@ -548,8 +548,8 @@ line
 // jumlah data ada 3, apel index 0, belimbing index 1, ceri index 2
 
 // console.log(buah)
-// console.log(buah.toString()) //jadi string
-// console.log(buah.join(' - '))  //jadi string
+// console.log(buah.toString()) // jadi string
+// console.log(buah.join(' - '))  // jadi string
 // console.log(buah[0])
 // console.log(buah[1])
 // console.log(buah[2])
@@ -627,7 +627,7 @@ line
 
 // let buah = ['Jeruk', 'Nanas', 'Pisang', 'Anggur', 'Leci']
 
-// buah.splice(2, 2, 'Lemon','Kiwi') //parameter 1 = pilih index ke berapa, parameter 2 = banyak data yang ingin dihapus, parameter 3 = mau masukkan data apa
+// buah.splice(2, 2, 'Lemon','Kiwi') // parameter 1 = pilih index ke berapa, parameter 2 = banyak data yang ingin dihapus, parameter 3 = mau masukkan data apa
 // console.log(buah)
 
 // CONCATENATION (GABUNGKAN ARRAY)
@@ -645,7 +645,7 @@ line
 // OBJECT
 // variabel di dalam object disebut property
 // function di dalam objek dinamakan method
-// this akan menunjuk objek di mana  this itu dipanggil
+// this akan menunjuk objek di mana this itu dipanggil
 
 
 // var manusia = { 
@@ -732,7 +732,7 @@ line
 
 // console.log(objOne.propFour[0])
 
-// objOne.propTwo.subPropTwo(45) //mengakses method
+// objOne.propTwo.subPropTwo(45) // mengakses method
 
 // var hari = {
 //     pertama: "Senin",
@@ -943,7 +943,7 @@ line
 // function name(a, b){
 //     var nameA=a.name.toLowerCase() // harus ada toLowerCase nya
 //     var nameB=b.name.toLowerCase()
-//     if (nameA < nameB) //sort string ascending
+//     if (nameA < nameB) // sort string ascending
 //         return -1 
 //     else if (nameA > nameB)
 //         return 1
