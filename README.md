@@ -1,2 +1,3 @@
-# JC10-Fundamental
+# JC10 Fundamental
+
 Purwadhika materi fundamental
